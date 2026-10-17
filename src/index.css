@@ -2,38 +2,42 @@
 
 @layer base {
   :root {
-    --bg-main: #08080a;
-    --surface-1: #0f1014;
-    --surface-2: #16171d;
-    --surface-border: rgba(255, 255, 255, 0.07);
+    --bg-main: #050507;
+    --surface-1: #090b0f;
+    --surface-2: #101319;
+    --surface-3: #181c24;
+    --surface-border: rgba(255, 255, 255, 0.08);
+    --surface-border-bright: rgba(255, 255, 255, 0.18);
     --surface-border-subtle: rgba(255, 255, 255, 0.04);
-    --text-primary: #f4f4f6;
-    --text-secondary: #9ea3ae;
-    --text-muted: #5e6472;
-    --accent-glow: rgba(240, 240, 245, 0.08);
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
+    --text-muted: #64748b;
+    --chrome-bright: #f8fafc;
+    --chrome-mid: #94a3b8;
+    --chrome-dark: #334155;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: #08080a;
-    color: #e4e4e7;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #050507;
+    color: #f8fafc;
+    font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
-  /* Custom scrollbar */
+  /* Precision monochromatic scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #08080a;
+    background: #050507;
   }
   ::-webkit-scrollbar-thumb {
-    background: #23252d;
-    border-radius: 3px;
+    background: #1e222a;
+    border-radius: 0px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #3b3e4a;
+    background: #475569;
   }
 }
 
@@ -43,41 +47,62 @@
 }
 
 .font-body {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .font-mono-tech {
   font-family: 'Space Grotesk', monospace;
   font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
 }
 
-/* Subtle architectural grain */
-.bg-noise {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 24px 24px;
+/* Precision architectural grid */
+.bg-tech-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
-/* Realistic glass reflections */
-.glass-panel {
-  background: rgba(14, 15, 19, 0.72);
+/* Polished metallic specular shadow */
+.chrome-glow {
+  box-shadow: 0 0 40px -10px rgba(255, 255, 255, 0.12);
+}
+
+.chrome-glow-lg {
+  box-shadow: 0 0 80px -15px rgba(255, 255, 255, 0.16);
+}
+
+/* Metallic silver brushed border highlight */
+.silver-border-glow {
+  box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.1);
+}
+
+/* Frosted precision HUD panel */
+.hud-panel {
+  background: rgba(10, 12, 16, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-.glass-panel-subtle {
-  background: rgba(18, 19, 24, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+/* Subtle metallic sweep animation */
+@keyframes metallicShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
-/* Metallic specular sheen */
-.sheen-metal {
-  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.01) 50%, rgba(255,255,255,0.05) 100%);
-}
-
-/* Text balance utility */
-.text-balance {
-  text-wrap: balance;
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: metallicShimmer 6s infinite ease-in-out;
 }

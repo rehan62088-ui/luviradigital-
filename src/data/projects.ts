@@ -2,10 +2,35 @@ import { Project } from '../types';
 
 export const PROJECTS: Project[] = [
   {
-    id: 'aura-fitness',
+    id: 'azure-haven',
     number: '01',
+    title: 'AZURE HAVEN VILLA & RESORT',
+    category: 'Hotel / Hospitality & Booking Engine',
+    year: 'CONCEPT / 2026',
+    tagline: 'Direct luxury reservation ecosystem with dynamic villa selection.',
+    summary: 'A bespoke digital booking engine and visual monograph for a clifftop boutique resort in Bali, engineered to bypass OTA fees and drive direct guest reservations.',
+    theIdea: 'Most hotel websites trap guests in rigid, slow reservation widgets loaded from third-party iframes. For Azure Haven, the concept was to make booking as serene as the destination itself: seamless room visualizers, instant WhatsApp concierge integration, and a direct checkout flow.',
+    visualDirection: 'Deep ocean navy and sun-bleached travertine whites with warm brushed gold accents. Generous negative space, editorial type, and fluid calendar date pickers designed to turn wanderlust into confirmed bookings.',
+    keyFeatures: [
+      'Direct Zero-Commission Booking Engine with instant rate calculator',
+      'Interactive Villa Visualizer with 360° suite tour & ocean views',
+      'Automated Guest Concierge with one-tap WhatsApp reservation desk',
+      'Seasonal Rate Engine with multi-currency UPI & card settlements'
+    ],
+    responsiveExperience: {
+      desktopNotes: 'Spacious dual-pane reservation suite showing real-time room amenities, sunset angles, and instant price breakdown.',
+      mobileNotes: 'Thumb-friendly floating reservation bar allowing guests to choose dates and confirm rooms in under 4 taps.'
+    },
+    intendedResult: 'A high-converting direct reservation engine that establishes luxury hospitality credibility and drives direct, high-value guest bookings.',
+    themeColor: '#0a101d',
+    accentHex: '#38bdf8',
+    mockupType: 'hotel'
+  },
+  {
+    id: 'aura-fitness',
+    number: '02',
     title: 'AURA FITNESS',
-    category: 'Fitness / Wellness',
+    category: 'Fitness & Wellness Club',
     year: 'CONCEPT / 2026',
     tagline: 'High-performance movement meets architectural minimalism.',
     summary: 'A bespoke digital sanctuary for an elite private athletic and recovery club in Zurich, designed to inspire discipline and physical longevity through high-contrast visual rhythm.',
@@ -28,9 +53,9 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'noir-table',
-    number: '02',
+    number: '03',
     title: 'NOIR TABLE',
-    category: 'Restaurant / Hospitality',
+    category: 'Restaurant & Hospitality Gastronomy',
     year: 'CONCEPT / 2026',
     tagline: 'An immersive digital tasting menu for avant-garde gastronomy.',
     summary: 'A nocturnal digital experience for a 14-seat experimental culinary atelier, highlighting seasonal foraging, open-fire technique, and intimate dining rituals.',
@@ -53,9 +78,9 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'vanta-realty',
-    number: '03',
+    number: '04',
     title: 'VANTA REALTY',
-    category: 'Real Estate',
+    category: 'Luxury Architecture & Real Estate',
     year: 'CONCEPT / 2026',
     tagline: 'Architectural residences presented with gallery-grade reverence.',
     summary: 'An ultra-luxury residential brokerage portal showcasing brutalist villas, alpine sanctuaries, and waterfront modernist compounds across Europe and North America.',
@@ -78,9 +103,9 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'nexa-academy',
-    number: '04',
+    number: '05',
     title: 'NEXA ACADEMY',
-    category: 'Education',
+    category: 'Executive Education & Cohort Platform',
     year: 'CONCEPT / 2026',
     tagline: 'Modern executive leadership & craft mastery for high-growth operators.',
     summary: 'A rigorous digital campus and cohort platform for product designers, technical founders, and creative directors scaling modern venture-backed organizations.',

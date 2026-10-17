@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Project } from './types';
+import { ScrollProgress } from './components/ScrollProgress';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { EditorialStatement } from './components/EditorialStatement';
 import { Services } from './components/Services';
 import { SelectedWork } from './components/SelectedWork';
+import { WhyLuvira } from './components/WhyLuvira';
+import { PricingSection } from './components/PricingSection';
 import { Process } from './components/Process';
-import { WhyLuvora } from './components/WhyLuvora';
+import { FAQSection } from './components/FAQSection';
 import { AboutStudio } from './components/AboutStudio';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -17,63 +20,76 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [enquiryInitialService, setEnquiryInitialService] = useState<string | undefined>(undefined);
+  const [enquiryInitialPackage, setEnquiryInitialPackage] = useState<string | undefined>(undefined);
 
-  const handleOpenEnquiry = (serviceName?: string) => {
+  const handleOpenEnquiry = (serviceName?: string, packageName?: string) => {
     setEnquiryInitialService(serviceName);
+    setEnquiryInitialPackage(packageName);
     setIsEnquiryOpen(true);
   };
 
   const handleCloseEnquiry = () => {
     setIsEnquiryOpen(false);
     setEnquiryInitialService(undefined);
+    setEnquiryInitialPackage(undefined);
   };
 
   return (
-    <div className="min-h-screen bg-[#08080a] text-[#E4E4E7] font-body selection:bg-white selection:text-black">
-      {/* 3-Zone Sticky Navbar */}
+    <div className="min-h-screen bg-[#050507] text-slate-100 font-body selection:bg-white selection:text-black">
+      {/* Viewport Top High-Performance Scroll Progress Indicator */}
+      <ScrollProgress />
+
+      {/* 1. Sticky Navigation */}
       <Navbar onStartProject={() => handleOpenEnquiry()} />
 
       <main>
-        {/* Hero Section with Typography & 3D Architectural Sculpture */}
+        {/* 1. Premium Hero Section with Architectural 3D Composition */}
         <Hero onStartProject={() => handleOpenEnquiry()} />
 
-        {/* Editorial Introduction Statement */}
+        {/* Agency Manifesto / Positioning Statement */}
         <EditorialStatement />
 
-        {/* Services: What We Build (5 curated service blocks) */}
-        <Services onStartProject={handleOpenEnquiry} />
+        {/* 2. Services Overview (9 Actual Disciplines) */}
+        <Services onStartProject={(svc) => handleOpenEnquiry(svc)} />
 
-        {/* Selected Work (4 Concept Projects with realistic mockups) */}
+        {/* 3. Selected Work / Portfolio (Curated Concept Showcases) */}
         <SelectedWork onSelectProject={(project) => setSelectedProject(project)} />
 
-        {/* Process: From Idea to Launch (4 deliberate phases) */}
+        {/* 4. Why Businesses Choose Luvira Digital */}
+        <WhyLuvira />
+
+        {/* 5. Transparent Pricing Packages (Basic ₹10k, Pro ₹20k, Premium ₹30k) */}
+        <PricingSection onSelectPackage={(pkg) => handleOpenEnquiry(undefined, pkg)} />
+
+        {/* 6. Project Workflow (From Idea to Launch) */}
         <Process />
 
-        {/* Why Luvora: Built With Intention (4 editorial points) */}
-        <WhyLuvora />
+        {/* 7. Frequently Asked Questions */}
+        <FAQSection />
 
-        {/* About: Small Studio. Big Attention to Detail. */}
+        {/* 8. Agency Foundation & Honesty */}
         <AboutStudio />
 
-        {/* High-Impact Contact Section */}
+        {/* 8. Contact & Conversion Section */}
         <ContactSection onStartProject={() => handleOpenEnquiry()} />
       </main>
 
-      {/* Minimalist Studio Footer */}
+      {/* 9. Professional Footer */}
       <Footer onStartProject={() => handleOpenEnquiry()} />
 
-      {/* Project Detail Case Study Modal */}
+      {/* Interactive Project Detail Case Study Modal */}
       <ProjectDetailModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
-        onStartProject={handleOpenEnquiry}
+        onStartProject={(svc) => handleOpenEnquiry(svc)}
       />
 
-      {/* Project Enquiry Experience ("Start a Project") */}
+      {/* Structured Project Enquiry Experience */}
       <ProjectEnquiryModal
         isOpen={isEnquiryOpen}
         onClose={handleCloseEnquiry}
         initialService={enquiryInitialService}
+        initialPackage={enquiryInitialPackage}
       />
     </div>
   );

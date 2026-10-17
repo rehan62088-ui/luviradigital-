@@ -6,34 +6,137 @@ interface ProjectMockupProps {
 }
 
 export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
-  // Render bespoke realistic device mockups tailored to each project
+  // Bespoke realistic device mockups tailored to each project
+
+  if (project.id === 'azure-haven') {
+    return (
+      <div className="relative w-full aspect-[16/10] bg-gradient-to-b from-[#101217] to-[#06070a] overflow-hidden p-4 sm:p-7 flex flex-col justify-center items-center shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-white/10 group-hover:border-white/30 transition-all duration-500">
+        {/* Ambient glow */}
+        <div className="absolute top-0 right-1/4 w-80 h-40 bg-white/[0.03] blur-3xl pointer-events-none" />
+
+        {/* Studio Desktop Display Chassis */}
+        <div className="relative w-full h-full max-w-[620px] bg-[#0c0e14] p-2.5 sm:p-3 shadow-2xl border border-white/15 flex flex-col">
+          {/* Top bezel with browser dots */}
+          <div className="flex items-center justify-between px-2 pb-2 text-[10px] text-zinc-500 font-mono-tech border-b border-white/[0.06]">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-zinc-600" />
+              <span className="w-2 h-2 bg-zinc-800" />
+              <span className="w-2 h-2 bg-zinc-800" />
+            </div>
+            <span className="text-[9px] uppercase tracking-wider text-slate-300 font-mono-tech">azurehaven-resort.com · uluwatu</span>
+            <span className="text-[9px] text-white font-mono-tech">DIRECT BOOKING BEST RATE</span>
+          </div>
+
+          {/* Screen Content: Hotel Booking Engine */}
+          <div className="relative flex-1 bg-[#050811] rounded overflow-hidden flex flex-col p-4 sm:p-5 text-zinc-100">
+            {/* Screen Glass Reflection */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-sky-300/[0.02] to-white/[0.05] pointer-events-none" />
+
+            {/* Nav */}
+            <div className="flex items-center justify-between border-b border-white/[0.08] pb-2 mb-3">
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-bold tracking-widest font-display text-white">AZURE HAVEN</span>
+                <span className="text-[9px] uppercase tracking-wider text-sky-300 font-mono-tech">VILLAS & SPA</span>
+              </div>
+              <div className="flex items-center gap-3 text-[9px] font-mono-tech text-zinc-400">
+                <span className="text-white">Suites</span>
+                <span>Dining</span>
+                <span>Experiences</span>
+                <div className="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                  Concierge Live
+                </div>
+              </div>
+            </div>
+
+            {/* Hero & Interactive Booking Bar */}
+            <div className="grid grid-cols-12 gap-3 flex-1 items-center">
+              <div className="col-span-7 space-y-2">
+                <span className="text-[9px] uppercase font-mono-tech text-sky-300">Direct Reservation Suite</span>
+                <h4 className="text-base sm:text-xl font-bold tracking-tight text-white leading-tight font-display">
+                  Cliffside Ocean Sanctuary
+                </h4>
+                <p className="text-[10px] text-zinc-400 line-clamp-2 leading-relaxed">
+                  Private infinity pool villas perched above the Indian Ocean. Reserve directly for complimentary sunset cocktail hour and airport chauffeur.
+                </p>
+
+                {/* Live booking engine calendar snippet */}
+                <div className="p-2 rounded bg-white/[0.03] border border-white/[0.08] grid grid-cols-3 gap-2 text-[9px] font-mono-tech">
+                  <div>
+                    <span className="text-zinc-500 block text-[7px] uppercase">Check-In</span>
+                    <span className="text-white font-medium">Oct 24, 2026</span>
+                  </div>
+                  <div>
+                    <span className="text-zinc-500 block text-[7px] uppercase">Check-Out</span>
+                    <span className="text-white font-medium">Oct 29, 2026</span>
+                  </div>
+                  <div>
+                    <span className="text-zinc-500 block text-[7px] uppercase">Guests</span>
+                    <span className="text-white font-medium">2 Adults</span>
+                  </div>
+                </div>
+
+                <div className="pt-1 flex items-center gap-3">
+                  <div className="px-3 py-1 bg-sky-400 text-zinc-950 text-[10px] font-semibold tracking-wide rounded-sm flex items-center gap-1">
+                    <span>Check Villa Availability</span>
+                    <span>→</span>
+                  </div>
+                  <span className="text-[9px] text-zinc-400 font-mono-tech">Save 18% vs OTAs</span>
+                </div>
+              </div>
+
+              {/* Villa Visual Card Preview */}
+              <div className="col-span-5 h-32 rounded bg-[#0b1424] border border-sky-400/20 p-2.5 flex flex-col justify-between relative overflow-hidden">
+                <div className="flex justify-between text-[8px] font-mono-tech text-sky-300">
+                  <span>PANORAMIC POOL VILLA</span>
+                  <span className="text-white">€480/NIGHT</span>
+                </div>
+                {/* SVG ocean sunrise architectural view */}
+                <div className="my-auto py-1">
+                  <svg className="w-full h-12 stroke-sky-400/80 fill-sky-950/40" viewBox="0 0 100 40">
+                    <path d="M 0 35 Q 25 32, 50 35 T 100 35" strokeWidth="1" stroke="#38bdf8" />
+                    <path d="M 0 38 Q 30 35, 60 38 T 100 38" strokeWidth="0.8" stroke="#0ea5e9" opacity="0.6" />
+                    <rect x="25" y="10" width="50" height="20" strokeWidth="1" />
+                    <line x1="35" y1="10" x2="35" y2="30" strokeWidth="0.8" />
+                    <line x1="65" y1="10" x2="65" y2="30" strokeWidth="0.8" />
+                    <circle cx="50" cy="8" r="5" fill="#fef08a" opacity="0.4" />
+                  </svg>
+                </div>
+                <div className="text-[8px] font-mono-tech text-zinc-400 flex justify-between border-t border-white/[0.05] pt-1">
+                  <span>180 m² · OCEAN FRONT</span>
+                  <span className="text-emerald-400">AVAILABLE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stand */}
+          <div className="w-16 h-3 bg-gradient-to-b from-[#182236] to-[#0c121e] mx-auto rounded-b -mb-2 border-x border-b border-white/10 shadow-lg" />
+        </div>
+      </div>
+    );
+  }
+
   if (project.id === 'aura-fitness') {
     return (
       <div className="relative w-full aspect-[16/10] bg-gradient-to-b from-[#101116] to-[#090a0d] rounded-xl overflow-hidden p-4 sm:p-7 flex flex-col justify-center items-center shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/[0.07] group-hover:border-white/20 transition-all duration-500">
-        {/* Soft directional studio ambient glow */}
         <div className="absolute top-0 right-1/4 w-80 h-40 bg-white/[0.03] blur-3xl pointer-events-none" />
         
-        {/* Realistic Desktop Display Chassis */}
         <div className="relative w-full h-full max-w-[620px] bg-[#121318] rounded-lg p-2.5 sm:p-3 shadow-2xl border border-white/10 flex flex-col">
-          {/* Top bezel with camera dot */}
           <div className="flex items-center justify-between px-2 pb-2 text-[10px] text-zinc-500 font-mono-tech border-b border-white/[0.06]">
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-zinc-700/80" />
               <span className="w-2 h-2 rounded-full bg-zinc-800" />
               <span className="w-2 h-2 rounded-full bg-zinc-800" />
             </div>
-            <span className="text-[9px] uppercase tracking-wider text-zinc-400">aura-club.ch · zurich</span>
+            <span className="text-[9px] uppercase tracking-wider text-zinc-400 font-mono-tech">aura-club.ch · zurich</span>
             <div className="w-2.5 h-2.5 rounded-full bg-zinc-800 flex items-center justify-center">
               <span className="w-1 h-1 rounded-full bg-emerald-500/70" />
             </div>
           </div>
 
-          {/* Screen Content: Aura Fitness Website */}
           <div className="relative flex-1 bg-[#09090b] rounded overflow-hidden flex flex-col p-4 sm:p-6 text-zinc-100 selection:bg-zinc-800">
-            {/* Screen Glass Reflection Sheen */}
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.06] pointer-events-none" />
             
-            {/* Top Navigation */}
             <div className="flex items-center justify-between border-b border-white/[0.08] pb-3 mb-4">
               <span className="text-sm font-bold tracking-widest font-display text-white">AURA ATHLETICS</span>
               <div className="flex items-center gap-4 text-[10px] font-mono-tech uppercase text-zinc-400">
@@ -43,7 +146,6 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
               </div>
             </div>
 
-            {/* Hero Split */}
             <div className="grid grid-cols-12 gap-4 items-center flex-1">
               <div className="col-span-7 flex flex-col justify-center pr-2">
                 <span className="text-[9px] uppercase tracking-widest text-zinc-500 font-mono-tech mb-1">Private Athletic Atelier</span>
@@ -61,14 +163,12 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
                 </div>
               </div>
 
-              {/* Graphic Athlete Silhouette Box */}
               <div className="col-span-5 h-full min-h-[120px] rounded bg-gradient-to-b from-[#181a20] to-[#0c0d10] border border-white/10 p-3 relative flex flex-col justify-between overflow-hidden">
                 <div className="absolute -right-6 -bottom-6 w-28 h-28 bg-white/[0.04] rounded-full blur-xl" />
                 <div className="flex justify-between items-start text-[9px] font-mono-tech text-zinc-400">
                   <span>BIOMECHANICS</span>
                   <span className="text-emerald-400">99.4% OPT</span>
                 </div>
-                {/* Minimalist Graphic Sculpture/Body Line SVG */}
                 <div className="my-auto py-2 flex items-center justify-center">
                   <svg className="w-full h-12 text-zinc-400 stroke-current opacity-80" viewBox="0 0 100 40" fill="none">
                     <path d="M5 35 Q 25 5, 45 20 T 85 10 T 95 35" strokeWidth="1.5" strokeLinecap="round" />
@@ -84,7 +184,6 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
             </div>
           </div>
 
-          {/* Desktop Stand Base & Shadow */}
           <div className="w-16 h-3 bg-gradient-to-b from-[#1a1b22] to-[#111216] mx-auto rounded-b -mb-2 border-x border-b border-white/10 shadow-lg" />
         </div>
       </div>
@@ -94,12 +193,9 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
   if (project.id === 'noir-table') {
     return (
       <div className="relative w-full aspect-[16/10] bg-gradient-to-b from-[#141210] to-[#0a0908] rounded-xl overflow-hidden p-4 sm:p-7 flex flex-col justify-center items-center shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/[0.07] group-hover:border-[#d4af37]/30 transition-all duration-500">
-        {/* Candlelight warm ambient glow */}
         <div className="absolute top-1/2 left-1/3 w-72 h-36 bg-[#d4af37]/[0.04] blur-3xl pointer-events-none" />
 
-        {/* Laptop Chassis */}
         <div className="relative w-full max-w-[600px] bg-[#1a1715] rounded-t-lg p-2.5 sm:p-3 pb-1 border-t border-x border-white/10 shadow-2xl flex flex-col">
-          {/* Browser header */}
           <div className="flex items-center justify-between px-2 pb-2 text-[10px] text-zinc-500 font-mono-tech border-b border-white/[0.06]">
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-amber-800/80" />
@@ -110,18 +206,14 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
             <span className="text-[9px] text-amber-500/80">14 SEATS ONLY</span>
           </div>
 
-          {/* Screen Content: Noir Table Website */}
           <div className="relative bg-[#0d0b09] rounded overflow-hidden flex flex-col p-4 sm:p-6 text-zinc-200">
-            {/* Screen Glass Reflection */}
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-amber-200/[0.02] to-white/[0.05] pointer-events-none" />
 
-            {/* Menu Header */}
             <div className="flex items-center justify-between border-b border-amber-900/30 pb-2 mb-3">
               <span className="text-base font-serif italic tracking-wide text-[#f5eedc]">NOIR TABLE</span>
               <span className="text-[9px] font-mono-tech tracking-widest uppercase text-amber-300/70">ACT III: EMBER & FORAGE</span>
             </div>
 
-            {/* Culinary Monograph Grid */}
             <div className="grid grid-cols-12 gap-3 flex-1 items-center">
               <div className="col-span-7 space-y-2">
                 <div className="text-[10px] uppercase font-mono-tech text-amber-500/80">Course 07 of 12</div>
@@ -139,7 +231,6 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
                 </div>
               </div>
 
-              {/* Dish Visual Preview */}
               <div className="col-span-5 h-28 rounded bg-[#161310] border border-amber-500/20 p-2.5 flex flex-col justify-between relative overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08)_0%,transparent_70%)]" />
                 <div className="text-[8px] font-mono-tech text-amber-400/70 flex justify-between">
@@ -159,7 +250,6 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
           </div>
         </div>
 
-        {/* Laptop Bottom Lip / Trackpad Deck */}
         <div className="w-full max-w-[624px] h-3 bg-gradient-to-b from-[#211f1c] to-[#151310] rounded-b-md border-x border-b border-white/10 shadow-2xl relative flex items-center justify-center">
           <div className="w-14 h-1 bg-zinc-700/60 rounded-full" />
         </div>
@@ -170,12 +260,9 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
   if (project.id === 'vanta-realty') {
     return (
       <div className="relative w-full aspect-[16/10] bg-gradient-to-b from-[#0f1115] to-[#07080a] rounded-xl overflow-hidden p-4 sm:p-7 flex flex-col justify-center items-center shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/[0.07] group-hover:border-zinc-400/30 transition-all duration-500">
-        {/* Cool steel rim glow */}
         <div className="absolute top-0 left-1/4 w-80 h-40 bg-blue-500/[0.02] blur-3xl pointer-events-none" />
 
-        {/* Realistic Desktop Display with Floating Tablet Layer */}
         <div className="relative w-full max-w-[600px] bg-[#111317] rounded-lg p-2.5 sm:p-3 border border-white/10 shadow-2xl flex flex-col">
-          {/* Header */}
           <div className="flex items-center justify-between px-2 pb-2 text-[10px] text-zinc-500 font-mono-tech border-b border-white/[0.06]">
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-zinc-700" />
@@ -186,9 +273,7 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
             <span className="text-[9px] text-zinc-400">ARCHITECTURAL DOSSIER</span>
           </div>
 
-          {/* Screen Content: Vanta Realty */}
           <div className="relative bg-[#07080a] rounded overflow-hidden flex flex-col p-4 sm:p-6 text-zinc-100">
-            {/* Screen Glass Reflection */}
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.05] pointer-events-none" />
 
             <div className="flex items-center justify-between border-b border-white/[0.08] pb-2 mb-3">
@@ -225,13 +310,11 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
                 </div>
               </div>
 
-              {/* Architectural Elevation Vector */}
               <div className="col-span-5 h-28 rounded bg-[#101217] border border-white/10 p-2.5 flex flex-col justify-between relative overflow-hidden">
                 <div className="flex justify-between text-[8px] font-mono-tech text-zinc-500">
                   <span>SUN AZIMUTH: 242°</span>
                   <span>WEST EXP</span>
                 </div>
-                {/* Modernist Villa Wireframe/Silhouette */}
                 <div className="my-auto py-1">
                   <svg className="w-full h-12 stroke-zinc-400 fill-zinc-900/60" viewBox="0 0 100 40">
                     <rect x="5" y="15" width="50" height="20" strokeWidth="1" />
@@ -252,15 +335,12 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
     );
   }
 
-  // Project 4: NEXA ACADEMY
+  // Project 5: NEXA ACADEMY
   return (
     <div className="relative w-full aspect-[16/10] bg-gradient-to-b from-[#111218] to-[#090a0d] rounded-xl overflow-hidden p-4 sm:p-7 flex flex-col justify-center items-center shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/[0.07] group-hover:border-zinc-400/30 transition-all duration-500">
-      {/* Studio highlight */}
       <div className="absolute top-0 right-1/3 w-80 h-36 bg-white/[0.03] blur-3xl pointer-events-none" />
 
-      {/* Screen Frame */}
       <div className="relative w-full max-w-[600px] bg-[#13141a] rounded-lg p-2.5 sm:p-3 border border-white/10 shadow-2xl flex flex-col">
-        {/* Header */}
         <div className="flex items-center justify-between px-2 pb-2 text-[10px] text-zinc-500 font-mono-tech border-b border-white/[0.06]">
           <div className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-zinc-700" />
@@ -271,9 +351,7 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
           <span className="text-[9px] text-zinc-300 font-mono-tech">APPLICATIONS OPEN</span>
         </div>
 
-        {/* Screen Content: Nexa Academy */}
         <div className="relative bg-[#090a0d] rounded overflow-hidden flex flex-col p-4 sm:p-6 text-zinc-100">
-          {/* Glass Reflection */}
           <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.05] pointer-events-none" />
 
           <div className="flex items-center justify-between border-b border-white/[0.08] pb-2 mb-3">
@@ -302,7 +380,6 @@ export const ProjectMockup: React.FC<ProjectMockupProps> = ({ project }) => {
               </div>
             </div>
 
-            {/* Modular Curriculum Matrix */}
             <div className="col-span-5 h-28 rounded bg-[#11131a] border border-white/10 p-2.5 flex flex-col justify-between">
               <div className="flex justify-between text-[8px] font-mono-tech text-zinc-400">
                 <span>MODULE 01–04</span>
